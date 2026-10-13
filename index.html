@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Prudhviraju Penta — SDET, Creativity Apps portfolio featuring photo/video quality, automation, and media workflows.">
+<title>Prudhviraju Penta — SDET, Creativity Apps Portfolio</title>
+<style>
+:root{--bg:#e8ebee;--ink:#14181c;--mute:#5b656e;--line:#c5ccd2;--accent:#2a4bd7;--tile:#d6dbe0;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#171b20;--ink:#eceff2;--mute:#97a1ab;--line:#2c333a;--accent:#7f98ff;--tile:#232a31}}
+:root[data-theme="dark"]{--bg:#171b20;--ink:#eceff2;--mute:#97a1ab;--line:#2c333a;--accent:#7f98ff;--tile:#232a31}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+header{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+header b{font-weight:800;font-size:1.05rem}
+nav a{margin-left:22px;text-decoration:none;color:var(--mute)}
+nav a:hover{color:var(--ink)}
+.hero{padding:9vh 0 6vh}
+.hero h1{font-size:clamp(2.8rem,9vw,7.5rem);line-height:.95;letter-spacing:-.035em;font-weight:800;margin:0 0 28px;max-width:11ch}
+.hero p{max-width:46ch;font-size:1.15rem;color:var(--mute);margin:0}
+.bar{display:flex;gap:8px;flex-wrap:wrap;margin:48px 0 20px;align-items:center}
+.bar button{font:inherit;background:none;color:var(--ink);border:1.5px solid var(--line);border-radius:99px;padding:7px 18px;cursor:pointer}
+.bar button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.tile{position:relative;border:0;padding:0;border-radius:4px;overflow:hidden;cursor:pointer;background:var(--tile);aspect-ratio:var(--r,4/5);text-align:left;font:inherit;color:#fff}
+.tile.wide{grid-column:span 2;--r:16/10}
+@media (max-width:620px){.tile.wide{grid-column:span 1}}
+.tile .art{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .5s}
+.tile:hover .art{transform:scale(1.04)}
+.tile .cap{position:absolute;left:0;right:0;bottom:0;padding:34px 14px 12px;background:linear-gradient(transparent,rgba(0,0,0,.6));display:flex;justify-content:space-between;font-size:.92rem}
+.play{position:absolute;top:12px;right:12px;width:38px;height:38px;border-radius:50%;background:rgba(0,0,0,.55);display:grid;place-items:center}
+.play::after{content:"";border-left:11px solid #fff;border-top:7px solid transparent;border-bottom:7px solid transparent;margin-left:3px}
+section{padding:9vh 0 4vh}
+h2{font-size:clamp(1.8rem,4vw,2.6rem);letter-spacing:-.02em;margin:0 0 20px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+@media (max-width:760px){.about{grid-template-columns:1fr}}
+.about p{max-width:56ch;color:var(--mute);margin:0 0 14px}
+.portrait{aspect-ratio:4/5;background:var(--tile);border-radius:4px;display:grid;place-items:center;color:var(--mute);font-size:.95rem;text-align:center;padding:20px}
+.contact a.big{display:inline-block;font-size:1rem;font-weight:600;text-decoration-thickness:2px;text-underline-offset:5px;text-decoration-color:var(--accent)}
+footer{padding:60px 0 40px;color:var(--mute);font-size:.9rem}
+dialog{border:0;padding:0;background:transparent;max-width:min(94vw,1100px);width:100%;color:#fff}
+dialog::backdrop{background:rgba(8,10,12,.88)}
+.stage{background:#0c0f12;border-radius:4px;overflow:hidden}
+.stage .media{aspect-ratio:16/10;background-size:cover;background-position:center;display:grid;place-items:center;text-align:center;padding:24px}
+.stage .media span{background:rgba(0,0,0,.6);padding:10px 16px;border-radius:4px;max-width:36ch;font-size:.95rem}
+.stage .meta{padding:14px 18px;display:flex;justify-content:space-between;gap:16px}
+.stage button{font:inherit;background:none;color:#fff;border:1.5px solid #4a535b;border-radius:99px;padding:5px 16px;cursor:pointer}
+.cmp{position:relative;width:100%;aspect-ratio:16/10;overflow:hidden;--p:50%}
+.cmp .l{position:absolute;inset:0;background-size:cover;background-position:center}
+.cmp .b{clip-path:inset(0 calc(100% - var(--p)) 0 0)}
+.cmp .b.ph{filter:grayscale(.75) brightness(.8) contrast(.8)}
+.cmp .h{position:absolute;top:0;bottom:0;left:var(--p);width:2px;background:#fff;box-shadow:0 0 6px rgba(0,0,0,.5)}
+.cmp .t{position:absolute;top:12px;background:rgba(0,0,0,.6);padding:3px 10px;border-radius:99px;font-size:.85rem}
+.cmp input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.cmp:focus-within{outline:3px solid var(--accent);outline-offset:-3px}
+.tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.tools span{border:1.5px solid var(--line);border-radius:99px;padding:4px 14px;font-size:.92rem}
+.apps{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:0 40px;margin:0}
+.apps div{border-top:1.5px solid var(--line);padding:16px 0 20px}
+.apps dt{font-weight:800;font-size:1.15rem}
+.apps dd{margin:4px 0 0;color:var(--mute);max-width:36ch}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.eyebrow{display:block;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:10px}
+.btn{display:inline-block;padding:12px 26px;border-radius:99px;background:var(--ink);color:var(--bg);text-decoration:none;font-weight:600;border:1.5px solid var(--ink)}
+.btn.o{background:none;color:var(--ink)}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;margin-top:56px;padding-top:24px;border-top:1.5px solid var(--line)}
+.stats b{display:block;font-size:2.6rem;line-height:1;font-weight:800;letter-spacing:-.03em}
+.stats span{color:var(--mute);font-size:.95rem}
+.card{border:1.5px solid var(--line);border-radius:14px;padding:clamp(24px,5vw,48px);background:var(--tile)}
+.tile{border-radius:10px}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;margin-top:20px}
+.gallery img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:4px;cursor:pointer;display:block}
+@media (prefers-reduced-motion:reduce){.tile .art{transition:none}}
+
+.focus-section{padding:5vh 0 3vh}
+.focus-section h2{max-width:16ch}
+.focus-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px}
+.focus-grid>div{border:1.5px solid var(--line);border-radius:18px;padding:22px;background:color-mix(in srgb,var(--tile) 78%,transparent)}
+.focus-grid strong{display:block;font-size:1.05rem;margin-bottom:8px}
+.focus-grid span{display:block;color:var(--mute);font-size:.95rem;line-height:1.5}
+@media(max-width:900px){.focus-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.focus-grid{grid-template-columns:1fr}}
+</style>
+
+<style id="interview-polish">
+:root{--bg:#f7f7f5;--ink:#0b0b0c;--mute:#65676b;--line:#d9dadd;--accent:#0066cc;--tile:#ececeb;--glass:rgba(247,247,245,.78)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b0b0c;--ink:#f5f5f7;--mute:#a1a1a6;--line:#2c2c2e;--accent:#2997ff;--tile:#151516;--glass:rgba(11,11,12,.78)}}
+body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue",Arial,sans-serif;letter-spacing:-.01em;background:radial-gradient(circle at 50% -20%,rgba(0,102,204,.09),transparent 36%),var(--bg)}
+.wrap{max-width:1320px;padding:0 clamp(20px,4vw,48px)}
+header{padding:18px 0;background:var(--glass);backdrop-filter:saturate(180%) blur(18px);-webkit-backdrop-filter:saturate(180%) blur(18px)}
+header b{letter-spacing:-.02em}nav{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:22px}nav a{margin:0;font-size:.92rem;font-weight:600}nav a::after{content:"";display:block;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .22s ease}nav a:hover::after{transform:scaleX(1)}
+.hero{min-height:78vh;display:grid;align-content:center;padding:12vh 0 8vh;position:relative}.hero:after{content:"";position:absolute;right:0;top:18%;width:min(38vw,520px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(0,102,204,.12),transparent 68%);filter:blur(12px);pointer-events:none}.hero .eyebrow{font-size:.74rem;letter-spacing:.18em}.hero h1{font-size:clamp(3.6rem,10vw,8.8rem);line-height:.88;max-width:8ch;margin-bottom:30px}.hero p{font-size:clamp(1.1rem,1.8vw,1.45rem);max-width:52ch;line-height:1.45}.cta{margin-top:36px}.btn{padding:13px 25px;border-radius:999px;transition:transform .2s ease,box-shadow .2s ease,background .2s ease}.btn:hover{transform:translateY(-1px);box-shadow:0 10px 28px rgba(0,0,0,.10)}.btn:first-child{background:var(--accent);border-color:var(--accent);color:#fff}.btn.o:hover{background:color-mix(in srgb,var(--ink) 7%,transparent)}
+.stats{gap:18px;margin-top:64px}.stats>div{padding:20px 0}.stats b{font-size:clamp(2.4rem,5vw,4rem)}
+section{padding:12vh 0 5vh}.eyebrow{color:var(--accent);font-weight:700}.grid{grid-template-columns:repeat(12,1fr);gap:16px}.tile{grid-column:span 4;min-height:340px;border-radius:18px;box-shadow:0 1px 0 rgba(255,255,255,.4) inset,0 16px 40px rgba(0,0,0,.08);transition:transform .35s ease,box-shadow .35s ease}.tile.wide{grid-column:span 8;min-height:420px}.tile:hover{transform:translateY(-4px);box-shadow:0 26px 60px rgba(0,0,0,.14)}.tile .art{transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .4s ease}.tile:hover .art{transform:scale(1.055);filter:saturate(1.04)}.tile .cap{padding:70px 18px 16px;background:linear-gradient(transparent,rgba(0,0,0,.72));font-weight:600}.play{backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);background:rgba(0,0,0,.42);border:1px solid rgba(255,255,255,.28)}
+.gallery{grid-template-columns:repeat(12,1fr);gap:12px}.gallery img{grid-column:span 3;aspect-ratio:4/5;border-radius:16px;transition:transform .3s ease,box-shadow .3s ease}.gallery img:nth-child(5n+1),.gallery img:nth-child(5n+4){grid-column:span 6;aspect-ratio:16/10}.gallery img:hover{transform:translateY(-3px);box-shadow:0 20px 45px rgba(0,0,0,.12)}
+.apps{grid-template-columns:repeat(3,1fr);gap:16px 22px}.apps div{border:1px solid var(--line);border-radius:18px;padding:22px;background:color-mix(in srgb,var(--tile) 72%,transparent);min-height:150px}.apps dt{font-size:1.08rem;letter-spacing:-.02em}.apps dd{max-width:none}.about{align-items:center;gap:clamp(32px,7vw,90px)}.portrait{border-radius:24px;min-height:560px;box-shadow:0 24px 70px rgba(0,0,0,.12)}
+#testing{position:relative}#testing:before{content:"Creative software deserves both visual judgment and engineering rigor.";display:block;font-size:clamp(1.9rem,4vw,4.3rem);line-height:1.02;letter-spacing:-.045em;max-width:15ch;margin-bottom:54px;font-weight:700}
+.card{border-radius:24px;background:color-mix(in srgb,var(--tile) 72%,transparent);box-shadow:0 20px 50px rgba(0,0,0,.06)}
+dialog{max-width:min(96vw,1220px)}.stage{border-radius:20px;box-shadow:0 30px 100px rgba(0,0,0,.45)}.stage .media{aspect-ratio:16/9}.stage .meta{padding:18px 20px}
+footer{border-top:1px solid var(--line);margin-top:8vh;padding:34px 0 42px}
+@media(max-width:980px){.grid{grid-template-columns:repeat(6,1fr)}.tile,.tile.wide{grid-column:span 3}.apps{grid-template-columns:repeat(2,1fr)}.gallery{grid-template-columns:repeat(6,1fr)}.gallery img,.gallery img:nth-child(5n+1),.gallery img:nth-child(5n+4){grid-column:span 3}}
+@media(max-width:700px){header{align-items:flex-start;gap:16px}nav{gap:10px 15px}.hero{min-height:auto;padding:11vh 0 7vh}.hero h1{font-size:clamp(3.2rem,17vw,5.3rem)}.grid{display:grid;grid-template-columns:1fr}.tile,.tile.wide{grid-column:1;min-height:390px}.gallery{grid-template-columns:repeat(2,1fr)}.gallery img,.gallery img:nth-child(5n+1),.gallery img:nth-child(5n+4){grid-column:span 1;aspect-ratio:4/5}.apps{grid-template-columns:1fr}.portrait{min-height:420px}.stats{grid-template-columns:1fr 1fr}.stats>div:last-child{grid-column:1/-1}}
+.section-lede{max-width:70ch;color:var(--mute);font-size:clamp(1.02rem,1.4vw,1.18rem);margin:0 0 36px}
+.case-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+.case-study{grid-column:span 5;border:1px solid var(--line);border-radius:28px;padding:clamp(24px,4vw,42px);background:color-mix(in srgb,var(--tile) 65%,transparent);box-shadow:0 18px 55px rgba(0,0,0,.055)}
+.case-study.featured{grid-column:span 7}
+.case-kicker,.metric-label{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:14px}
+.case-study h3,.automation-panel h3{font-size:clamp(1.65rem,3vw,2.55rem);line-height:1.03;letter-spacing:-.035em;margin:0 0 16px}
+.case-summary{font-size:1.05rem;color:var(--mute);max-width:64ch;margin:0 0 30px}
+.case-columns{display:grid;grid-template-columns:repeat(2,1fr);gap:18px 26px}.case-columns h4{font-size:.95rem;margin:0 0 6px}.case-columns p{color:var(--mute);margin:0;font-size:.95rem}.case-columns.compact{margin-top:26px}
+.case-tags,.stack-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:30px}.case-tags span,.stack-row span{border:1px solid var(--line);border-radius:999px;padding:7px 12px;font-size:.82rem;font-weight:600;background:color-mix(in srgb,var(--bg) 58%,transparent)}
+.pipeline{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:24px 0}.pipeline span{padding:8px 12px;border-radius:999px;background:var(--ink);color:var(--bg);font-size:.86rem;font-weight:700}.pipeline b{color:var(--mute);font-weight:500}.case-note{margin:28px 0 0;padding-top:20px;border-top:1px solid var(--line);color:var(--mute);font-size:.9rem}
+.metric-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.metric-card{border:1px solid var(--line);border-radius:22px;padding:24px;background:color-mix(in srgb,var(--tile) 62%,transparent);min-height:210px}.metric-card strong{display:block;font-size:1.28rem;letter-spacing:-.025em;margin-bottom:10px}.metric-card p{color:var(--mute);margin:0;font-size:.94rem}
+.automation-panel{margin-top:18px;display:grid;grid-template-columns:.8fr 1.2fr;gap:42px;border-radius:28px;padding:clamp(26px,5vw,52px);background:var(--ink);color:var(--bg)}.automation-panel .eyebrow{color:#6eb6ff}.automation-panel ol{list-style:none;margin:0;padding:0;counter-reset:flow}.automation-panel li{counter-increment:flow;display:grid;grid-template-columns:34px 1fr;gap:0 14px;padding:14px 0;border-top:1px solid color-mix(in srgb,var(--bg) 18%,transparent)}.automation-panel li:before{content:"0" counter(flow);grid-row:1/3;color:#6eb6ff;font-size:.78rem;font-weight:700;padding-top:3px}.automation-panel li b{font-size:.98rem}.automation-panel li span{grid-column:2;color:color-mix(in srgb,var(--bg) 70%,transparent);font-size:.9rem;margin-top:3px}
+.stack-row{margin-top:20px}.stack-row span{padding:9px 14px}
+@media(max-width:980px){.case-study,.case-study.featured{grid-column:span 12}.metric-grid{grid-template-columns:repeat(2,1fr)}.automation-panel{grid-template-columns:1fr}}
+@media(max-width:700px){.case-columns{grid-template-columns:1fr}.metric-grid{grid-template-columns:1fr}.metric-card{min-height:auto}.case-study{border-radius:22px}.pipeline{gap:6px}.pipeline span{font-size:.78rem;padding:7px 10px}.automation-panel{border-radius:22px;padding:26px 22px}}
+
+
+.focus-section{padding:5vh 0 3vh}
+.focus-section h2{max-width:16ch}
+.focus-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px}
+.focus-grid>div{border:1.5px solid var(--line);border-radius:18px;padding:22px;background:color-mix(in srgb,var(--tile) 78%,transparent)}
+.focus-grid strong{display:block;font-size:1.05rem;margin-bottom:8px}
+.focus-grid span{display:block;color:var(--mute);font-size:.95rem;line-height:1.5}
+@media(max-width:900px){.focus-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.focus-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header><b>Prudhviraju Penta</b><nav><a href="#work">Work</a><a href="#case-studies">Case Studies</a><a href="#automation">Automation</a><a href="#testing">Testing</a><a href="#about">About</a></nav></header>
+
+  <div class="hero">
+    <span class="eyebrow">SDET · Creativity Apps · Photo &amp; Video Quality · Automation</span>
+    <h1>Prudhviraju Penta</h1>
+    <p>I combine more than ten years of SDET experience with hands-on photo and video editing—bringing test automation, engineering rigor, visual judgment and a strong understanding of creative workflows.</p>
+    <div class="cta"><a class="btn" href="#work">View creative work</a><a class="btn o" href="#case-studies">Explore SDET case studies</a></div>
+    <div class="stats">
+      <div><b>~10</b><span>years in SDET &amp; test automation</span></div>
+      <div><b>7</b><span>editing apps I use</span></div>
+      <div><b>2</b><span>Apple creative apps: Pixelmator Pro and Final Cut Pro</span></div>
+    </div>
+  </div>
+
+  <section class="focus-section" aria-labelledby="creativity-focus-title">
+    <span class="eyebrow">Creativity Apps Focus</span>
+    <h2 id="creativity-focus-title">What I bring to Creativity Apps</h2>
+    <p class="section-lede">I connect hands-on photo and video editing with SDET engineering—so I can test both what a creator sees and what the system is doing underneath.</p>
+    <div class="focus-grid">
+      <div><strong>Creative workflow empathy</strong><span>Import, edit, preview, undo/redo, save and export from a real user perspective.</span></div>
+      <div><strong>Automation depth</strong><span>Python, PyTest, Swift/XCTest, Appium and CI coverage for repeatable regression feedback.</span></div>
+      <div><strong>Media-quality validation</strong><span>Visual fidelity, orientation, resolution, formats, metadata, playback, A/V sync and export integrity.</span></div>
+      <div><strong>Engineering judgment</strong><span>Risk-based coverage, evidence-driven triage, exploratory testing and release-quality thinking.</span></div>
+    </div>
+  </section>
+
+  <span class="eyebrow" style="padding-top:8vh">Portfolio</span>
+  <h2 id="work" style="margin:0">Selected work</h2>
+  <p style="max-width:66ch;color:var(--mute);margin:10px 0 0">Each item below identifies my editing contribution and the tool used. For externally hosted videos, the original footage/channel ownership is credited separately.</p>
+  <div class="bar" style="margin-top:24px" role="group" aria-label="Filter edits">
+    <button data-f="all" aria-pressed="true">All</button>
+    <button data-f="photo" aria-pressed="false">Photo edits</button>
+    <button data-f="video" aria-pressed="false">Video edits</button>
+  </div>
+  <div class="grid" id="grid"></div>
+  <p style="margin:24px 0 0;color:var(--mute)">More of my edits are on Instagram: <a href="https://www.instagram.com/prudhveee/" target="_blank" rel="noopener">@prudhveee</a> and <a href="https://www.instagram.com/konchadamounika9/" target="_blank" rel="noopener">@konchadamounika9</a></p>
+
+  <section id="more-edits">
+    <span class="eyebrow">Gallery</span>
+    <h2>More of my edited photos</h2>
+    <p style="max-width:56ch;color:var(--mute);margin:8px 0 0">A selection of edited photos I've posted on Instagram.</p>
+    <div class="gallery"><img src="assets/image_05072ae02723.jpg" alt="Edited travel photo posted on Instagram" onclick="openGalleryImg(this.src)"><img src="assets/image_a75a6fa9c79b.jpg" alt="Edited travel photo posted on Instagram" onclick="openGalleryImg(this.src)"><img src="assets/image_695b1fda9518.jpg" alt="Edited travel photo posted on Instagram" onclick="openGalleryImg(this.src)"><img src="assets/image_0b998eb78738.jpg" alt="Edited travel photo posted on Instagram" onclick="openGalleryImg(this.src)"><img src="assets/image_b8335962acf1.jpg" alt="Edited travel photo posted on Instagram" onclick="openGalleryImg(this.src)"><img src="assets/image_88534e5c8ede.jpg" alt="Edited travel photo posted on Instagram" onclick="openGalleryImg(this.src)"><img src="assets/image_d69b3a194e1c.jpg" alt="Edited travel photo posted on Instagram" onclick="openGalleryImg(this.src)"><img src="assets/image_ca2e1f73566e.jpg" alt="Edited travel photo posted on Instagram" onclick="openGalleryImg(this.src)"></div>
+  </section>
+
+
+  <section id="case-studies">
+    <span class="eyebrow">Case Studies</span>
+    <h2>Creativity Apps, tested through an SDET lens</h2>
+    <p class="section-lede">The work below connects hands-on editing experience with the engineering questions I use to evaluate creative applications: functional correctness, media fidelity, workflow reliability, recovery, automation and cross-platform consistency.</p>
+
+    <div class="case-grid">
+      <article class="case-study featured">
+        <div class="case-kicker">01 · Production experience</div>
+        <h3>HP Smart — image editing &amp; scan quality</h3>
+        <p class="case-summary">At HP, I tested customer-facing image and scanning workflows across mobile and desktop. My focus was not only whether an edit completed, but whether the resulting media stayed visually correct and usable from capture through export.</p>
+        <div class="case-columns">
+          <div>
+            <h4>Workflow</h4>
+            <p>Scan / capture → preview → crop / rotate → apply image adjustments → save / export → reopen and validate.</p>
+          </div>
+          <div>
+            <h4>Quality checks</h4>
+            <p>Edge detection, shadow removal, crop accuracy, orientation, resolution, visual consistency, export integrity and recovery from interruptions.</p>
+          </div>
+          <div>
+            <h4>Automation</h4>
+            <p>Python + PyTest and Appium for repeatable workflows, with OpenCV / histogram-based comparison used to help flag meaningful image-output differences for investigation.</p>
+          </div>
+          <div>
+            <h4>Engineering mindset</h4>
+            <p>Use automation for deterministic checks, then keep human visual judgment for subjective image quality, usability and final severity assessment.</p>
+          </div>
+        </div>
+        <div class="case-tags"><span>Python</span><span>PyTest</span><span>Appium</span><span>OpenCV</span><span>Image Quality</span><span>Mobile + Desktop</span></div>
+      </article>
+
+      <article class="case-study">
+        <div class="case-kicker">02 · Portfolio demonstration</div>
+        <h3>Video editing quality workflow</h3>
+        <p class="case-summary">Using my own editing workflow as a representative project, I approach video quality as an end-to-end pipeline rather than a playback-only check.</p>
+        <div class="pipeline" aria-label="Video quality workflow">
+          <span>Import</span><b>→</b><span>Edit</span><b>→</b><span>Preview</span><b>→</b><span>Export</span><b>→</b><span>Validate</span>
+        </div>
+        <div class="case-columns compact">
+          <div><h4>Timeline</h4><p>Trim accuracy, transitions, mixed media, undo/redo and edit persistence.</p></div>
+          <div><h4>Playback</h4><p>A/V synchronization, smooth playback, dropped-frame symptoms and seeking behavior.</p></div>
+          <div><h4>Output</h4><p>Resolution, frame rate, orientation, duration, file integrity and preview-to-export consistency.</p></div>
+          <div><h4>Long-run behavior</h4><p>Responsiveness, memory growth, thermal impact and stability during longer editing/export sessions.</p></div>
+        </div>
+        <p class="case-note"><strong>Portfolio scope:</strong> this is a demonstration of how I would structure quality coverage for an editing workflow; it is separate from the HP Smart production experience above.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="automation">
+    <span class="eyebrow">Automation + SDET Engineering</span>
+    <h2>Build repeatable coverage around real creative workflows.</h2>
+    <p class="section-lede">My SDET approach starts with the user workflow, then chooses the right level of automation for UI behavior, media output, system integration and regression feedback. Performance is one signal within that broader quality strategy—not the sole focus.</p>
+
+    <div class="metric-grid">
+      <div class="metric-card"><span class="metric-label">Functional coverage</span><strong>Protect core editing flows</strong><p>Import, edit, preview, undo/redo, save, reopen and export across positive, negative and interruption scenarios.</p></div>
+      <div class="metric-card"><span class="metric-label">Media validation</span><strong>Verify the output, not only the UI</strong><p>Check resolution, orientation, duration, frame rate, A/V sync, file integrity, metadata and preview-to-export consistency.</p></div>
+      <div class="metric-card"><span class="metric-label">Automation design</span><strong>Use the right layer</strong><p>Python/PyTest for reusable validation, Swift/XCTest or XCUITest for Apple-platform workflows, Appium where cross-platform mobile coverage adds value, and OpenCV for programmatic visual checks.</p></div>
+      <div class="metric-card"><span class="metric-label">CI + regression</span><strong>Fast, trustworthy feedback</strong><p>Keep critical smoke and stable regression paths automated, isolate flaky failures, preserve useful logs and artifacts, and escalate customer-impacting regressions with evidence.</p></div>
+    </div>
+
+    <div class="automation-panel">
+      <div>
+        <span class="eyebrow">SDET workflow</span>
+        <h3>Understand → automate → validate → triage</h3>
+      </div>
+      <ol>
+        <li><b>Model the user journey</b><span>Start from how a creator imports, edits, previews, saves and exports—not from isolated UI controls.</span></li>
+        <li><b>Choose high-value automation</b><span>Automate deterministic, repeatable scenarios and keep exploratory coverage for subjective visual and usability risks.</span></li>
+        <li><b>Validate beyond the screen</b><span>Confirm the resulting file, media properties and persisted state so a passing UI action also produces a correct output.</span></li>
+        <li><b>Triage with evidence</b><span>Use logs, screenshots, output files, environment details and targeted metrics to separate product regressions from test or infrastructure failures.</span></li>
+      </ol>
+    </div>
+
+    <div class="stack-row" aria-label="SDET automation and engineering tools">
+      <span>Python</span><span>PyTest</span><span>Swift</span><span>XCTest / XCUITest</span><span>Appium</span><span>OpenCV</span><span>CI/CD</span><span>Regression Automation</span>
+    </div>
+  </section>
+
+  <section id="apps">
+    <span class="eyebrow">Tools</span><h2>Editing apps I use</h2>
+    <dl class="apps"><div><dt>Pixelmator Pro</dt><dd>Photo retouching, color adjustments and layer-based edits.</dd></div><div><dt>Final Cut Pro</dt><dd>Video cutting, color correction and audio cleanup.</dd></div><div><dt>iMovie</dt><dd>Quick cuts, titles and transitions for short videos.</dd></div><div><dt>Adobe Photoshop</dt><dd>Retouching, masking and compositing.</dd></div><div><dt>HP Smart</dt><dd>Tested its image editing features as a SDET, including document scan edge detection and shadow removal.</dd></div><div><dt>Photos</dt><dd>Cropping and light and color adjustments.</dd></div><div><dt>Instagram</dt><dd>Edits on my profile <a href="https://www.instagram.com/prudhveee/" target="_blank" rel="noopener">@prudhveee</a> and on <a href="https://www.instagram.com/konchadamounika9/" target="_blank" rel="noopener">@konchadamounika9</a>.</dd></div></dl>
+  </section>
+
+  <section id="testing">
+    <span class="eyebrow">SDET Approach</span><h2>How I test Creativity Apps</h2>
+    <p style="max-width:56ch;color:var(--mute);margin:0 0 28px">I evaluate creative tools end to end—combining functional and regression coverage, visual fidelity, editing workflows, export validation, stability, targeted performance checks and repeatable automation.</p>
+    <dl class="apps"><div><dt>Color and file formats</dt><dd>Check that colors stay consistent across color profiles like sRGB and Display P3, and that files open and export correctly in formats such as JPEG, PNG, HEIC and PSD.</dd></div><div><dt>Layers and undo</dt><dd>Stack many layers, masks and adjustments, then undo and redo in different orders to confirm nothing is lost or reordered.</dd></div><div><dt>Timeline and playback</dt><dd>Build long timelines with mixed frame rates and resolutions, and check smooth playback, accurate trims and audio-video sync.</dd></div><div><dt>Export quality</dt><dd>Compare exported video against the timeline for quality, length, sync and file size across presets.</dd></div><div><dt>Performance and stability</dt><dd>Time key actions on large projects and watch for slowdowns, memory growth and crashes during long sessions.</dd></div><div><dt>Automated checks</dt><dd>Automate stable, repeatable workflows and output checks in CI so functional and media regressions surface early, while reserving subjective visual decisions for human review.</dd></div></dl>
+  </section>
+
+  <section id="about">
+    <div class="about">
+      <div class="portrait" style="background-image:url('assets/image_1e434e9ea636.jpg');background-size:cover;background-position:center 20%"></div>
+      <div>
+        <span class="eyebrow">About · San Diego, California</span><h2>About me</h2>
+        <p>I combine more than ten years of SDET experience with hands-on photo and video editing. That gives me two perspectives on creative software: the engineer who designs repeatable automated coverage and investigates regressions, and the user who notices visual quality, responsiveness and workflow friction.</p>
+        <p>My HP Smart experience included image-editing and scanning validation across customer workflows. I bring that same SDET mindset to Creativity Apps—balancing automation, functional and regression coverage, media integrity, performance awareness and exploratory testing while keeping the creator experience at the center.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <footer>© <span id="yr"></span> Prudhviraju Penta.</footer>
+</div>
+
+<dialog id="lb" aria-label="Work viewer">
+  <div class="stage">
+    <div class="media" id="lbMedia"></div>
+    <div class="meta"><div><strong id="lbTitle"></strong><div id="lbSub" style="color:#b4bcc4;max-width:60ch;margin-top:4px"></div></div><button id="lbClose">Close</button></div>
+  </div>
+</dialog>
+
+<script type="text/plain" id="vid-strawberry">assets/vid-strawberry.mp4</script>
+<script type="text/plain" id="vid-zara">assets/vid-zara.mp4</script>
+<script type="text/plain" id="vid-monica">assets/vid-monica.mp4</script>
+<script type="text/plain" id="vid-instagram-1">assets/vid-instagram-1.mp4</script>
+<script type="text/plain" id="vid-instagram-2">assets/vid-instagram-2.mp4</script>
+<script type="text/plain" id="vid-instagram-3">assets/vid-instagram-3.mp4</script>
+<script>
+/* EDIT THIS LIST: type "photo" or "video"; title; place = what you edited.
+   photos: src = your edited image, before = the original (both embedded data: URIs). videos: link = your YouTube/Vimeo/Drive page. */
+var WORK=[
+ {type:"photo",title:"Wildflower couple portrait",place:"Outdoor portrait enhancement · color and light adjustments",note:"Editing contribution: enhanced this outdoor couple portrait with color and light adjustments, improved contrast and clarity, and refined overall tones to bring out the landscape, sky, and flowers.",h:[142,48],alt:"Outdoor couple portrait in a wildflower field with enhanced color and light adjustments",src:"assets/image_bbfa48843a53.png"},
+ {type:"photo",title:"Outdoor portrait",place:"Portrait enhancement · color and light adjustments",note:"Editing contribution: enhanced this outdoor portrait with light and color adjustments, tonal balancing, and overall cleanup for a polished lifestyle look.",h:[198,62],alt:"Outdoor portrait photo edit with polished color and light adjustments",src:"assets/image_b28cedde4331.png"},
+ {type:"video",title:"Instagram video edit 1",place:"Short-form video edit · Instagram",note:"Editing contribution: created and refined this short-form video using Instagram editing tools, including clip selection and sequencing, timing, transitions/effects where used, music/audio placement, and final social-media export.",shape:"wide",h:[230,85],alt:"Instagram short-form video edit 1",src:"assets/image_46ae2e3107c8.jpg",vid:"vid-instagram-1"},
+ {type:"video",title:"Instagram video edit 2",place:"Short-form video edit · Instagram",note:"Editing contribution: created and refined this short-form video using Instagram editing tools, including clip selection and sequencing, timing, transitions/effects where used, music/audio placement, and final social-media export.",shape:"wide",h:[250,110],alt:"Instagram short-form video edit 2",src:"assets/image_c23222e6f653.jpg",vid:"vid-instagram-2"},
+ {type:"video",title:"Instagram video edit 3",place:"Short-form video edit · Instagram",note:"Editing contribution: created and refined this short-form video using Instagram editing tools, including clip selection and sequencing, timing, transitions/effects where used, music/audio placement, and final social-media export.",shape:"wide",h:[270,135],alt:"Instagram short-form video edit 3",src:"assets/image_c1e5db0bff7a.jpg",vid:"vid-instagram-3"},
+ {type:"photo",title:"Creative portrait collage",place:"Creative portrait collage · Pixelmator Pro",note:"Editing contribution: created a layered portrait collage using repeated crops of the same image, varied scale and positioning, overlapping composition, and color adjustments to create a stylized editorial effect.",h:[315,35],alt:"Creative portrait collage with repeated layered crops of a woman, edited in Pixelmator Pro",src:"assets/image_48cf1fc13fc2.jpg"},
+ {type:"photo",title:"Las Vegas",place:"Photo edit · Apple Photos",note:"Photo editing completed by me in Apple Photos.",h:[200,30],alt:"Two people taking a selfie in sunglasses on the Las Vegas Strip, with the New York-New York hotel and roller coaster behind them",src:"assets/image_81c147cf310b.jpg"},
+ {type:"photo",title:"Portrait",place:"Photo color grading · Pixelmator Pro",note:"Photo color grading completed by me in Pixelmator Pro.",h:[20,40],src:"assets/image_ea392629c5df.jpg",before:"assets/image_76dcfdc4a445.jpg"},
+ {type:"photo",title:"Maternity portrait",place:"Photo color adjustments · Pixelmator Pro",note:"Photo color adjustments completed by me in Pixelmator Pro.",h:[35,50],src:"assets/image_3f52fa8c5141.jpg",before:"assets/image_17627a8fc17c.jpg"},
+ {type:"video",title:"Monica",place:"Video editing · iMovie",note:"Video editing and final assembly completed by me in iMovie.",h:[260,40],src:"assets/image_09313df217ae.jpg",vid:"vid-monica"},
+ {type:"video",title:"Zara",place:"Video editing · Final Cut Pro",note:"Video editing and final assembly completed by me in Final Cut Pro.",h:[300,40],src:"assets/image_ede41bbeb37a.jpg",vid:"vid-zara"},
+ {type:"video",title:"Korean Strawberry Milk",place:"Short-form video edit · Instagram",note:"Short-form social video editing completed by me using Instagram editing tools.",h:[330,40],src:"assets/image_ff7b248eedb4.jpg",vid:"vid-strawberry",link:"https://www.instagram.com/p/DWSg9PVjGtm/"},
+ {type:"photo",title:"Maternity portrait II",place:"Photo color adjustments · Pixelmator Pro",note:"Photo color adjustments completed by me in Pixelmator Pro.",h:[340,35],src:"assets/image_810ae77d71e3.jpg",before:"assets/image_614fac2c9208.jpg"},
+ {type:"photo",title:"La Jolla portrait",place:"Black-and-white photo edit",note:"Black-and-white photo conversion and editing completed by me.",h:[0,0],alt:"Black and white portrait of a man in sunglasses and a denim jacket at La Jolla, with the ocean and coastline behind him",src:"assets/image_a1354ac8e360.jpg"},
+ {type:"photo",title:"Vegas garden",place:"Contrast + highlights · Pixelmator Pro",note:"Photo contrast and highlight adjustments completed by me in Pixelmator Pro.",h:[210,35],src:"assets/image_4ba89d9e9189.jpg",before:"assets/image_40e4a2ed2ef6.jpg"},
+ {type:"photo",title:"Document scan",place:"Scan correction · HP Smart",note:"HP Smart image-quality workflow: document edge detection and shadow-removal validation.",h:[230,40],src:"assets/image_734a982ab8b9.jpg",before:"assets/image_160cf57bbafe.jpg"},
+ {type:"photo",title:"Gender reveal",place:"Color styling · Vivid filter · Photos",note:"Photo color styling completed using the Vivid filter in Apple Photos.",h:[160,30],shape:"wide",src:"assets/image_1540f49f98cf.jpg",before:"assets/image_48b81cddfc0d.jpg"},
+ 
+];
+function art(h){return "linear-gradient(140deg,hsl("+h[0]+","+h[1]+"%,32%),hsl("+(h[0]+40)+","+h[1]+"%,62%))"}
+var grid=document.getElementById("grid"),lb=document.getElementById("lb");
+function render(f){
+  grid.innerHTML="";
+  WORK.forEach(function(w,i){
+    if(f!=="all"&&w.type!==f)return;
+    var b=document.createElement("button");
+    b.className="tile"+(w.shape==="wide"?" wide":"");
+    b.setAttribute("aria-label","Open "+w.title);
+    var bg=w.src?"url("+w.src+")":art(w.h);
+    b.innerHTML='<div class="art" style="background-image:'+bg+'"></div>'+(w.type==="video"?'<span class="play"></span>':"")+'<div class="cap"><span>'+w.title+'</span><span>'+w.place+'</span></div>';
+    b.onclick=function(){open(w)};
+    grid.appendChild(b);
+  });
+}
+function open(w){
+  var m=document.getElementById("lbMedia");
+  if(w.type==="photo"&&w.src&&!w.before){
+    m.style.padding="0";m.style.aspectRatio="auto";m.style.backgroundImage="none";
+    var im=document.createElement("img");im.src=w.src;im.alt=w.alt||w.title;
+    im.style.cssText="display:block;max-width:100%;max-height:78vh;margin:0 auto";
+    m.innerHTML="";m.appendChild(im);
+  }else if(w.type==="photo"){
+    m.style.padding="0";m.style.aspectRatio="";
+    var after=w.src?"url("+w.src+")":art(w.h),before=w.before?"url("+w.before+")":after;
+    m.innerHTML='<div class="cmp"><div class="l" style="background-image:'+after+'"></div><div class="l b'+(w.before?"":" ph")+'" style="background-image:'+before+'"></div><div class="h"></div><span class="t" style="left:12px">Original</span><span class="t" style="right:12px">Edited</span><input type="range" min="0" max="100" value="50" aria-label="Compare original and edited"></div>';
+    var c=m.firstChild;c.lastChild.oninput=function(e){c.style.setProperty("--p",e.target.value+"%")};
+  }else if(w.vid){
+    m.style.padding="0";m.style.aspectRatio="auto";m.style.backgroundImage="none";
+    var v=document.createElement("video");
+    v.controls=true;v.playsInline=true;v.poster=w.src||"";
+    v.style.cssText="display:block;max-width:100%;max-height:74vh;margin:0 auto;background:#000";
+    var videoSource=document.getElementById(w.vid).textContent.trim();v.src=videoSource.startsWith("assets/")?videoSource:"data:video/mp4;base64,"+videoSource;
+    m.innerHTML="";m.appendChild(v);
+    if(w.link){var l=document.createElement("div");l.style.cssText="padding:10px;text-align:center";l.innerHTML='<a href="'+w.link+'" target="_blank" rel="noopener" style="color:#fff">View on Instagram</a>';m.appendChild(l)}
+  }else{
+    m.style.padding="";m.style.aspectRatio="";m.style.backgroundImage=art(w.h);
+    m.innerHTML=w.link?'<a href="'+w.link+'" target="_blank" rel="noopener" style="color:#fff"><span>Watch on photographer’s YouTube channel</span></a>':'<span>Add your video link to play this edit.</span>';
+  }
+  document.getElementById("lbTitle").textContent=w.title;
+  document.getElementById("lbSub").textContent=w.note||w.place;
+  lb.showModal();
+}
+lb.addEventListener("close",function(){document.getElementById("lbMedia").innerHTML=""});
+function openGalleryImg(src){
+  var m=document.getElementById("lbMedia");
+  m.style.padding="0";m.style.aspectRatio="auto";m.style.backgroundImage="none";
+  var im=document.createElement("img");im.src=src;im.alt="Edited photo";
+  im.style.cssText="display:block;max-width:100%;max-height:78vh;margin:0 auto";
+  m.innerHTML="";m.appendChild(im);
+  document.getElementById("lbTitle").textContent="";
+  document.getElementById("lbSub").textContent="";
+  lb.showModal();
+}
+document.getElementById("lbClose").onclick=function(){lb.close()};
+lb.addEventListener("click",function(e){if(e.target===lb)lb.close()});
+document.querySelectorAll(".bar button").forEach(function(b){
+  b.onclick=function(){
+    document.querySelectorAll(".bar button").forEach(function(x){x.setAttribute("aria-pressed","false")});
+    b.setAttribute("aria-pressed","true");render(b.dataset.f);
+  };
+});
+document.getElementById("yr").textContent=new Date().getFullYear();
+render("all");
+</script>
+</body>
+</html>

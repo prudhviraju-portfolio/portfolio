@@ -131,19 +131,38 @@ footer{border-top:1px solid var(--line);margin-top:8vh;padding:34px 0 42px}
 .focus-grid span{display:block;color:var(--mute);font-size:.95rem;line-height:1.5}
 @media(max-width:900px){.focus-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.focus-grid{grid-template-columns:1fr}}
+
+.camera-section{padding:10vh 0 5vh}
+.camera-intro{max-width:72ch;color:var(--mute);font-size:clamp(1.02rem,1.4vw,1.16rem);margin:0 0 30px}
+.camera-verified{display:grid;grid-template-columns:1.05fr .95fr;gap:18px;margin:28px 0 18px}
+.camera-card{border:1px solid var(--line);border-radius:24px;padding:clamp(24px,4vw,38px);background:color-mix(in srgb,var(--tile) 68%,transparent)}
+.camera-card h3{font-size:clamp(1.35rem,2.6vw,2.1rem);letter-spacing:-.03em;margin:0 0 12px}
+.camera-card p{color:var(--mute);margin:0 0 14px}
+.camera-meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:22px}
+.camera-meta div{border-top:1px solid var(--line);padding-top:12px}
+.camera-meta b{display:block;font-size:.78rem;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
+.camera-meta span{font-weight:700}
+.camera-types{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px}
+.camera-type{border:1px solid var(--line);border-radius:18px;padding:20px;background:color-mix(in srgb,var(--bg) 55%,var(--tile))}
+.camera-type strong{display:block;margin-bottom:7px}
+.camera-type span{color:var(--mute);font-size:.92rem;line-height:1.5}
+.camera-note{margin-top:16px;color:var(--mute);font-size:.9rem}
+@media(max-width:980px){.camera-verified{grid-template-columns:1fr}.camera-types{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.camera-meta,.camera-types{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
 <div class="wrap">
-  <header><b>Prudhviraju Penta</b><nav><a href="#work">Work</a><a href="#case-studies">Case Studies</a><a href="#automation">Automation</a><a href="#testing">Testing</a><a href="#about">About</a></nav></header>
+  <header><b>Prudhviraju Penta</b><nav><a href="#work">Work</a><a href="#camera">Camera</a><a href="#case-studies">Case Studies</a><a href="#automation">Automation</a><a href="#testing">Testing</a><a href="#about">About</a></nav></header>
 
   <div class="hero">
     <span class="eyebrow">SDET · Creativity Apps · Photo &amp; Video Quality · Automation</span>
     <h1>Prudhviraju Penta</h1>
-    <p>I combine more than ten years of SDET experience with hands-on photo and video editing—bringing test automation, engineering rigor, visual judgment and a strong understanding of creative workflows.</p>
+    <p>I bring around 10 years of SDET experience, along with hands-on photo and video editing. That combination helps me look at creative apps from both sides: how the experience feels to a creator and how reliably the product works underneath.</p>
     <div class="cta"><a class="btn" href="#work">View creative work</a><a class="btn o" href="#case-studies">Explore SDET case studies</a></div>
     <div class="stats">
-      <div><b>~10</b><span>years in SDET &amp; test automation</span></div>
+      <div><b>10</b><span>around 10 years in SDET &amp; test automation</span></div>
       <div><b>7</b><span>editing apps I use</span></div>
       <div><b>2</b><span>Apple creative apps: Pixelmator Pro and Final Cut Pro</span></div>
     </div>
@@ -152,18 +171,56 @@ footer{border-top:1px solid var(--line);margin-top:8vh;padding:34px 0 42px}
   <section class="focus-section" aria-labelledby="creativity-focus-title">
     <span class="eyebrow">Creativity Apps Focus</span>
     <h2 id="creativity-focus-title">What I bring to Creativity Apps</h2>
-    <p class="section-lede">I connect hands-on photo and video editing with SDET engineering—so I can test both what a creator sees and what the system is doing underneath.</p>
+    <p class="section-lede">I use creative tools myself, so I naturally think about both sides of the experience: what a creator sees on screen and what needs to be correct underneath for that workflow to feel trustworthy.</p>
     <div class="focus-grid">
       <div><strong>Creative workflow empathy</strong><span>Import, edit, preview, undo/redo, save and export from a real user perspective.</span></div>
-      <div><strong>Automation depth</strong><span>Python, PyTest, Swift/XCTest, Appium and CI coverage for repeatable regression feedback.</span></div>
+      <div><strong>Automation depth</strong><span>Python, PyTest, Appium, OpenCV and CI for repeatable regression coverage, with familiarity around XCTest/XCUITest for Apple-platform workflows.</span></div>
       <div><strong>Media-quality validation</strong><span>Visual fidelity, orientation, resolution, formats, metadata, playback, A/V sync and export integrity.</span></div>
-      <div><strong>Engineering judgment</strong><span>Risk-based coverage, evidence-driven triage, exploratory testing and release-quality thinking.</span></div>
+      <div><strong>Engineering judgment</strong><span>I prioritize the workflows that matter most, investigate failures with evidence, and use exploratory testing where visual judgment matters.</span></div>
     </div>
+  </section>
+
+
+  <section id="camera" class="camera-section">
+    <span class="eyebrow">Camera &amp; Capture</span>
+    <h2>Camera details matter before the edit even starts.</h2>
+    <p class="camera-intro">When I look at photo or video quality, I do not start only at the editor. I also look at how the media was captured—focus, exposure, white balance, stabilization, HDR or low-light behavior, orientation, metadata and the way that media carries into the editing workflow.</p>
+
+    <div class="camera-verified">
+      <div class="camera-card">
+        <span class="eyebrow">Verified from one of my portfolio images</span>
+        <h3>Sony α7R V / ILCE-7RM5</h3>
+        <p>The creative portrait collage in this portfolio retains camera metadata identifying the source camera as a Sony ILCE-7RM5. The same file also records Pixelmator Pro 4.3 as the editing software.</p>
+        <div class="camera-meta">
+          <div><b>Camera make</b><span>SONY</span></div>
+          <div><b>Camera model</b><span>ILCE-7RM5</span></div>
+          <div><b>Editing software</b><span>Pixelmator Pro 4.3</span></div>
+          <div><b>Workflow</b><span>Capture → edit → export → validate</span></div>
+        </div>
+      </div>
+
+      <div class="camera-card">
+        <span class="eyebrow">What I pay attention to</span>
+        <h3>Capture-to-edit quality</h3>
+        <p>I look for problems that can show up before, during or after editing—not just whether a button works.</p>
+        <p><strong>Still images:</strong> focus, exposure, white balance, noise, HDR, crop/orientation, color consistency, HEIC/JPEG and metadata.</p>
+        <p><strong>Video:</strong> stabilization, frame rate, resolution, codec/container, A/V sync, HDR/SDR behavior and preview-to-export consistency.</p>
+      </div>
+    </div>
+
+    <h3 style="margin:34px 0 10px;font-size:1.25rem">Camera and media sources I consider when testing creative apps</h3>
+    <div class="camera-types">
+      <div class="camera-type"><strong>Mirrorless cameras</strong><span>High-resolution stills, RAW/JPEG/HEIC workflows, interchangeable lenses, autofocus, exposure and rich metadata.</span></div>
+      <div class="camera-type"><strong>DSLR cameras</strong><span>Large still-image files, RAW/JPEG handoff, lens metadata, orientation and color consistency through the edit/export path.</span></div>
+      <div class="camera-type"><strong>iPhone &amp; smartphones</strong><span>Wide/ultra-wide/telephoto capture, Portrait/Night/HDR behavior, HEIC/JPEG, orientation, stabilization and mobile metadata.</span></div>
+      <div class="camera-type"><strong>Action &amp; video cameras</strong><span>High-motion footage, stabilization, wide-angle video, 4K, higher frame rates, long clips and codec compatibility.</span></div>
+    </div>
+    <p class="camera-note">These camera categories describe the media sources and quality dimensions I would cover in a Creativity Apps test strategy. I only call out a specific camera as hands-on/verified when I can support it from the actual media or my experience.</p>
   </section>
 
   <span class="eyebrow" style="padding-top:8vh">Portfolio</span>
   <h2 id="work" style="margin:0">Selected work</h2>
-  <p style="max-width:66ch;color:var(--mute);margin:10px 0 0">Each item below identifies my editing contribution and the tool used. For externally hosted videos, the original footage/channel ownership is credited separately.</p>
+  <p style="max-width:66ch;color:var(--mute);margin:10px 0 0">I kept this selection intentionally varied—photo color work, compositing, short-form video and editing workflows—so each example shows a different part of how I work with creative media.</p>
   <div class="bar" style="margin-top:24px" role="group" aria-label="Filter edits">
     <button data-f="all" aria-pressed="true">All</button>
     <button data-f="photo" aria-pressed="false">Photo edits</button>
@@ -237,7 +294,7 @@ footer{border-top:1px solid var(--line);margin-top:8vh;padding:34px 0 42px}
     <div class="metric-grid">
       <div class="metric-card"><span class="metric-label">Functional coverage</span><strong>Protect core editing flows</strong><p>Import, edit, preview, undo/redo, save, reopen and export across positive, negative and interruption scenarios.</p></div>
       <div class="metric-card"><span class="metric-label">Media validation</span><strong>Verify the output, not only the UI</strong><p>Check resolution, orientation, duration, frame rate, A/V sync, file integrity, metadata and preview-to-export consistency.</p></div>
-      <div class="metric-card"><span class="metric-label">Automation design</span><strong>Use the right layer</strong><p>Python/PyTest for reusable validation, Swift/XCTest or XCUITest for Apple-platform workflows, Appium where cross-platform mobile coverage adds value, and OpenCV for programmatic visual checks.</p></div>
+      <div class="metric-card"><span class="metric-label">Automation design</span><strong>Use the right layer</strong><p>Python/PyTest for reusable validation, Appium for mobile workflows, OpenCV for programmatic visual checks, and XCTest/XCUITest familiarity for Apple-platform automation.</p></div>
       <div class="metric-card"><span class="metric-label">CI + regression</span><strong>Fast, trustworthy feedback</strong><p>Keep critical smoke and stable regression paths automated, isolate flaky failures, preserve useful logs and artifacts, and escalate customer-impacting regressions with evidence.</p></div>
     </div>
 
@@ -275,8 +332,8 @@ footer{border-top:1px solid var(--line);margin-top:8vh;padding:34px 0 42px}
       <div class="portrait" style="background-image:url('image_1e434e9ea636.jpg');background-size:cover;background-position:center 20%"></div>
       <div>
         <span class="eyebrow">About · San Diego, California</span><h2>About me</h2>
-        <p>I combine more than ten years of SDET experience with hands-on photo and video editing. That gives me two perspectives on creative software: the engineer who designs repeatable automated coverage and investigates regressions, and the user who notices visual quality, responsiveness and workflow friction.</p>
-        <p>My HP Smart experience included image-editing and scanning validation across customer workflows. I bring that same SDET mindset to Creativity Apps—balancing automation, functional and regression coverage, media integrity, performance awareness and exploratory testing while keeping the creator experience at the center.</p>
+        <p>I combine around 10 years of SDET experience with hands-on photo and video editing. That means I look at creative software in two ways at the same time: as an SDET who wants reliable, repeatable coverage, and as a user who notices when color, timing, responsiveness or the editing flow simply does not feel right.</p>
+        <p>My HP Smart experience included image-editing and scanning validation across customer workflows. I bring that same mindset to Creativity Apps: automate what should be repeatable, validate the actual media output, explore the areas where visual judgment matters, and keep the creator experience at the center.</p>
       </div>
     </div>
   </section>
@@ -305,8 +362,6 @@ var WORK=[
  {type:"photo",title:"Wildflower couple portrait",place:"Outdoor portrait enhancement · color and light adjustments",note:"Editing contribution: enhanced this outdoor couple portrait with color and light adjustments, improved contrast and clarity, and refined overall tones to bring out the landscape, sky, and flowers.",h:[142,48],alt:"Outdoor couple portrait in a wildflower field with enhanced color and light adjustments",src:"image_bbfa48843a53.png"},
  {type:"photo",title:"Outdoor portrait",place:"Portrait enhancement · color and light adjustments",note:"Editing contribution: enhanced this outdoor portrait with light and color adjustments, tonal balancing, and overall cleanup for a polished lifestyle look.",h:[198,62],alt:"Outdoor portrait photo edit with polished color and light adjustments",src:"image_b28cedde4331.png"},
  {type:"video",title:"Instagram video edit 1",place:"Short-form video edit · Instagram",note:"Editing contribution: created and refined this short-form video using Instagram editing tools, including clip selection and sequencing, timing, transitions/effects where used, music/audio placement, and final social-media export.",shape:"wide",h:[230,85],alt:"Instagram short-form video edit 1",src:"image_46ae2e3107c8.jpg",vid:"vid-instagram-1"},
- {type:"video",title:"Instagram video edit 2",place:"Short-form video edit · Instagram",note:"Editing contribution: created and refined this short-form video using Instagram editing tools, including clip selection and sequencing, timing, transitions/effects where used, music/audio placement, and final social-media export.",shape:"wide",h:[250,110],alt:"Instagram short-form video edit 2",src:"image_c23222e6f653.jpg",vid:"vid-instagram-2"},
- {type:"video",title:"Instagram video edit 3",place:"Short-form video edit · Instagram",note:"Editing contribution: created and refined this short-form video using Instagram editing tools, including clip selection and sequencing, timing, transitions/effects where used, music/audio placement, and final social-media export.",shape:"wide",h:[270,135],alt:"Instagram short-form video edit 3",src:"image_c1e5db0bff7a.jpg",vid:"vid-instagram-3"},
  {type:"photo",title:"Creative portrait collage",place:"Creative portrait collage · Pixelmator Pro",note:"Editing contribution: created a layered portrait collage using repeated crops of the same image, varied scale and positioning, overlapping composition, and color adjustments to create a stylized editorial effect.",h:[315,35],alt:"Creative portrait collage with repeated layered crops of a woman, edited in Pixelmator Pro",src:"image_48cf1fc13fc2.jpg"},
  {type:"photo",title:"Las Vegas",place:"Photo edit · Apple Photos",note:"Photo editing completed by me in Apple Photos.",h:[200,30],alt:"Two people taking a selfie in sunglasses on the Las Vegas Strip, with the New York-New York hotel and roller coaster behind them",src:"image_81c147cf310b.jpg"},
  {type:"photo",title:"Portrait",place:"Photo color grading · Pixelmator Pro",note:"Photo color grading completed by me in Pixelmator Pro.",h:[20,40],src:"image_ea392629c5df.jpg",before:"image_76dcfdc4a445.jpg"},

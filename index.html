@@ -132,29 +132,12 @@ footer{border-top:1px solid var(--line);margin-top:8vh;padding:34px 0 42px}
 @media(max-width:900px){.focus-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.focus-grid{grid-template-columns:1fr}}
 
-.camera-section{padding:10vh 0 5vh}
-.camera-intro{max-width:72ch;color:var(--mute);font-size:clamp(1.02rem,1.4vw,1.16rem);margin:0 0 30px}
-.camera-verified{display:grid;grid-template-columns:1.05fr .95fr;gap:18px;margin:28px 0 18px}
-.camera-card{border:1px solid var(--line);border-radius:24px;padding:clamp(24px,4vw,38px);background:color-mix(in srgb,var(--tile) 68%,transparent)}
-.camera-card h3{font-size:clamp(1.35rem,2.6vw,2.1rem);letter-spacing:-.03em;margin:0 0 12px}
-.camera-card p{color:var(--mute);margin:0 0 14px}
-.camera-meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:22px}
-.camera-meta div{border-top:1px solid var(--line);padding-top:12px}
-.camera-meta b{display:block;font-size:.78rem;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
-.camera-meta span{font-weight:700}
-.camera-types{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px}
-.camera-type{border:1px solid var(--line);border-radius:18px;padding:20px;background:color-mix(in srgb,var(--bg) 55%,var(--tile))}
-.camera-type strong{display:block;margin-bottom:7px}
-.camera-type span{color:var(--mute);font-size:.92rem;line-height:1.5}
-.camera-note{margin-top:16px;color:var(--mute);font-size:.9rem}
-@media(max-width:980px){.camera-verified{grid-template-columns:1fr}.camera-types{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:560px){.camera-meta,.camera-types{grid-template-columns:1fr}}
 
 </style>
 </head>
 <body>
 <div class="wrap">
-  <header><b>Prudhviraju Penta</b><nav><a href="#work">Work</a><a href="#camera">Camera</a><a href="#case-studies">Case Studies</a><a href="#automation">Automation</a><a href="#testing">Testing</a><a href="#about">About</a></nav></header>
+  <header><b>Prudhviraju Penta</b><nav><a href="#work">Work</a><a href="#apps">Editing Tools</a><a href="#case-studies">Case Studies</a><a href="#automation">Automation</a><a href="#testing">Testing</a><a href="#about">About</a></nav></header>
 
   <div class="hero">
     <span class="eyebrow">SDET · Creativity Apps · Photo &amp; Video Quality · Automation</span>
@@ -171,7 +154,7 @@ footer{border-top:1px solid var(--line);margin-top:8vh;padding:34px 0 42px}
   <section class="focus-section" aria-labelledby="creativity-focus-title">
     <span class="eyebrow">Creativity Apps Focus</span>
     <h2 id="creativity-focus-title">What I bring to Creativity Apps</h2>
-    <p class="section-lede">I use creative tools myself, so I naturally think about both sides of the experience: what a creator sees on screen and what needs to be correct underneath for that workflow to feel trustworthy.</p>
+    <p class="section-lede">I use tools like iPhone Photos, Instagram, Pixelmator Pro, Final Cut Pro and iMovie myself, so I naturally think about both sides of the experience: how the edit feels to a creator and what needs to stay correct underneath.</p>
     <div class="focus-grid">
       <div><strong>Creative workflow empathy</strong><span>Import, edit, preview, undo/redo, save and export from a real user perspective.</span></div>
       <div><strong>Automation depth</strong><span>Python, PyTest, Appium, OpenCV and CI for repeatable regression coverage, with familiarity around XCTest/XCUITest for Apple-platform workflows.</span></div>
@@ -179,48 +162,9 @@ footer{border-top:1px solid var(--line);margin-top:8vh;padding:34px 0 42px}
       <div><strong>Engineering judgment</strong><span>I prioritize the workflows that matter most, investigate failures with evidence, and use exploratory testing where visual judgment matters.</span></div>
     </div>
   </section>
-
-
-  <section id="camera" class="camera-section">
-    <span class="eyebrow">Camera &amp; Capture</span>
-    <h2>Camera details matter before the edit even starts.</h2>
-    <p class="camera-intro">When I look at photo or video quality, I do not start only at the editor. I also look at how the media was captured—focus, exposure, white balance, stabilization, HDR or low-light behavior, orientation, metadata and the way that media carries into the editing workflow.</p>
-
-    <div class="camera-verified">
-      <div class="camera-card">
-        <span class="eyebrow">Verified from one of my portfolio images</span>
-        <h3>Sony α7R V / ILCE-7RM5</h3>
-        <p>The creative portrait collage in this portfolio retains camera metadata identifying the source camera as a Sony ILCE-7RM5. The same file also records Pixelmator Pro 4.3 as the editing software.</p>
-        <div class="camera-meta">
-          <div><b>Camera make</b><span>SONY</span></div>
-          <div><b>Camera model</b><span>ILCE-7RM5</span></div>
-          <div><b>Editing software</b><span>Pixelmator Pro 4.3</span></div>
-          <div><b>Workflow</b><span>Capture → edit → export → validate</span></div>
-        </div>
-      </div>
-
-      <div class="camera-card">
-        <span class="eyebrow">What I pay attention to</span>
-        <h3>Capture-to-edit quality</h3>
-        <p>I look for problems that can show up before, during or after editing—not just whether a button works.</p>
-        <p><strong>Still images:</strong> focus, exposure, white balance, noise, HDR, crop/orientation, color consistency, HEIC/JPEG and metadata.</p>
-        <p><strong>Video:</strong> stabilization, frame rate, resolution, codec/container, A/V sync, HDR/SDR behavior and preview-to-export consistency.</p>
-      </div>
-    </div>
-
-    <h3 style="margin:34px 0 10px;font-size:1.25rem">Camera and media sources I consider when testing creative apps</h3>
-    <div class="camera-types">
-      <div class="camera-type"><strong>Mirrorless cameras</strong><span>High-resolution stills, RAW/JPEG/HEIC workflows, interchangeable lenses, autofocus, exposure and rich metadata.</span></div>
-      <div class="camera-type"><strong>DSLR cameras</strong><span>Large still-image files, RAW/JPEG handoff, lens metadata, orientation and color consistency through the edit/export path.</span></div>
-      <div class="camera-type"><strong>iPhone &amp; smartphones</strong><span>Wide/ultra-wide/telephoto capture, Portrait/Night/HDR behavior, HEIC/JPEG, orientation, stabilization and mobile metadata.</span></div>
-      <div class="camera-type"><strong>Action &amp; video cameras</strong><span>High-motion footage, stabilization, wide-angle video, 4K, higher frame rates, long clips and codec compatibility.</span></div>
-    </div>
-    <p class="camera-note">These camera categories describe the media sources and quality dimensions I would cover in a Creativity Apps test strategy. I only call out a specific camera as hands-on/verified when I can support it from the actual media or my experience.</p>
-  </section>
-
-  <span class="eyebrow" style="padding-top:8vh">Portfolio</span>
+<span class="eyebrow" style="padding-top:8vh">Portfolio</span>
   <h2 id="work" style="margin:0">Selected work</h2>
-  <p style="max-width:66ch;color:var(--mute);margin:10px 0 0">I kept this selection intentionally varied—photo color work, compositing, short-form video and editing workflows—so each example shows a different part of how I work with creative media.</p>
+  <p style="max-width:66ch;color:var(--mute);margin:10px 0 0">I kept this selection varied on purpose—iPhone Photos adjustments, Instagram video edits, Pixelmator Pro color and composite work, and desktop video workflows—so each example shows a different way I work with creative media.</p>
   <div class="bar" style="margin-top:24px" role="group" aria-label="Filter edits">
     <button data-f="all" aria-pressed="true">All</button>
     <button data-f="photo" aria-pressed="false">Photo edits</button>
@@ -317,8 +261,19 @@ footer{border-top:1px solid var(--line);margin-top:8vh;padding:34px 0 42px}
   </section>
 
   <section id="apps">
-    <span class="eyebrow">Tools</span><h2>Editing apps I use</h2>
-    <dl class="apps"><div><dt>Pixelmator Pro</dt><dd>Photo retouching, color adjustments and layer-based edits.</dd></div><div><dt>Final Cut Pro</dt><dd>Video cutting, color correction and audio cleanup.</dd></div><div><dt>iMovie</dt><dd>Quick cuts, titles and transitions for short videos.</dd></div><div><dt>Adobe Photoshop</dt><dd>Retouching, masking and compositing.</dd></div><div><dt>HP Smart</dt><dd>Tested its image editing features as a SDET, including document scan edge detection and shadow removal.</dd></div><div><dt>Photos</dt><dd>Cropping and light and color adjustments.</dd></div><div><dt>Instagram</dt><dd>Edits on my profile <a href="https://www.instagram.com/prudhveee/" target="_blank" rel="noopener">@prudhveee</a> and on <a href="https://www.instagram.com/konchadamounika9/" target="_blank" rel="noopener">@konchadamounika9</a>.</dd></div></dl>
+    <span class="eyebrow">Editing Tools &amp; Workflows</span>
+    <h2>Apps I actually use for photo and video edits</h2>
+    <p class="section-lede">I wanted this portfolio to reflect the tools I really use, not just list software names. Most of my edits are done across iPhone apps and desktop creative tools depending on the type of photo or video.</p>
+
+    <dl class="apps">
+      <div><dt>iPhone Photos</dt><dd>I use Photos for quick crop and rotate work, exposure and brightness adjustments, contrast, highlights, shadows, color tuning and filters such as Vivid.</dd></div>
+      <div><dt>Instagram</dt><dd>I use Instagram for short-form video edits, clip selection and sequencing, timing, music placement, effects and preparing the final social-media version.</dd></div>
+      <div><dt>Pixelmator Pro</dt><dd>I use Pixelmator Pro for portrait enhancement, color adjustments, contrast and highlight work, cleanup, compositing and layered edits such as the creative portrait collage in this portfolio.</dd></div>
+      <div><dt>Final Cut Pro</dt><dd>I use Final Cut Pro for more structured video editing such as cutting clips, arranging sequences, color correction and audio cleanup.</dd></div>
+      <div><dt>iMovie</dt><dd>I use iMovie for quick video assembly, trimming, transitions, titles and simple short-video workflows.</dd></div>
+      <div><dt>Adobe Photoshop</dt><dd>I use Photoshop for photo retouching, masking, compositing and more detailed image adjustments when needed.</dd></div>
+      <div><dt>HP Smart</dt><dd>This is where my editing experience connects directly with my SDET work. I tested image-editing and scan-quality features including crop behavior, document edge detection, shadow removal and export quality.</dd></div>
+    </dl>
   </section>
 
   <section id="testing">

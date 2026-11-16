@@ -133,6 +133,13 @@ footer{border-top:1px solid var(--line);margin-top:8vh;padding:34px 0 42px}
 @media(max-width:560px){.focus-grid{grid-template-columns:1fr}}
 
 
+
+.tile .cap{align-items:flex-end;gap:12px}
+.tile .cap .cap-main{display:flex;flex-direction:column;gap:3px;min-width:0}
+.tile .cap .personal{font-size:.76rem;font-weight:600;color:rgba(255,255,255,.82);line-height:1.25}
+.tile .cap .tool{font-size:.82rem;text-align:right;max-width:46%;color:rgba(255,255,255,.9)}
+@media(max-width:700px){.tile .cap{align-items:flex-end}.tile .cap .tool{max-width:44%;font-size:.76rem}}
+
 </style>
 </head>
 <body>
@@ -145,7 +152,7 @@ footer{border-top:1px solid var(--line);margin-top:8vh;padding:34px 0 42px}
     <p>I bring around 10 years of SDET experience, along with hands-on photo and video editing. That combination helps me look at creative apps from both sides: how the experience feels to a creator and how reliably the product works underneath.</p>
     <div class="cta"><a class="btn" href="#work">View creative work</a><a class="btn o" href="#case-studies">Explore SDET case studies</a></div>
     <div class="stats">
-      <div><b>10</b><span>around 10 years in SDET &amp; test automation</span></div>
+      <div><b>~10</b><span>years in SDET &amp; test automation</span></div>
       <div><b>7</b><span>editing apps I use</span></div>
       <div><b>2</b><span>Apple creative apps: Pixelmator Pro and Final Cut Pro</span></div>
     </div>
@@ -180,6 +187,22 @@ footer{border-top:1px solid var(--line);margin-top:8vh;padding:34px 0 42px}
     <div class="gallery"><img src="image_05072ae02723.jpg" alt="Edited travel photo posted on Instagram" onclick="openGalleryImg(this.src)"><img src="image_a75a6fa9c79b.jpg" alt="Edited travel photo posted on Instagram" onclick="openGalleryImg(this.src)"><img src="image_695b1fda9518.jpg" alt="Edited travel photo posted on Instagram" onclick="openGalleryImg(this.src)"><img src="image_0b998eb78738.jpg" alt="Edited travel photo posted on Instagram" onclick="openGalleryImg(this.src)"><img src="image_b8335962acf1.jpg" alt="Edited travel photo posted on Instagram" onclick="openGalleryImg(this.src)"><img src="image_88534e5c8ede.jpg" alt="Edited travel photo posted on Instagram" onclick="openGalleryImg(this.src)"><img src="image_d69b3a194e1c.jpg" alt="Edited travel photo posted on Instagram" onclick="openGalleryImg(this.src)"><img src="image_ca2e1f73566e.jpg" alt="Edited travel photo posted on Instagram" onclick="openGalleryImg(this.src)"></div>
   </section>
 
+
+  <section id="apps">
+    <span class="eyebrow">Editing Tools &amp; Workflows</span>
+    <h2>Apps I actually use for photo and video edits</h2>
+    <p class="section-lede">I wanted this portfolio to reflect the tools I really use, not just list software names. Most of my edits are done across iPhone apps and desktop creative tools depending on the type of photo or video.</p>
+
+    <dl class="apps">
+      <div><dt>iPhone Photos</dt><dd>I use Photos for quick crop and rotate work, exposure and brightness adjustments, contrast, highlights, shadows, color tuning and filters such as Vivid.</dd></div>
+      <div><dt>Instagram</dt><dd>I use Instagram for short-form video edits, clip selection and sequencing, timing, music placement, effects and preparing the final social-media version.</dd></div>
+      <div><dt>Pixelmator Pro</dt><dd>I use Pixelmator Pro for portrait enhancement, color adjustments, contrast and highlight work, cleanup, compositing and layered edits such as the creative portrait collage in this portfolio.</dd></div>
+      <div><dt>Final Cut Pro</dt><dd>I use Final Cut Pro for more structured video editing such as cutting clips, arranging sequences, color correction and audio cleanup.</dd></div>
+      <div><dt>iMovie</dt><dd>I use iMovie for quick video assembly, trimming, transitions, titles and simple short-video workflows.</dd></div>
+      <div><dt>Adobe Photoshop</dt><dd>I use Photoshop for photo retouching, masking, compositing and more detailed image adjustments when needed.</dd></div>
+      <div><dt>HP Smart</dt><dd>This is where my editing experience connects directly with my SDET work. I tested image-editing and scan-quality features including crop behavior, document edge detection, shadow removal and export quality.</dd></div>
+    </dl>
+  </section>
 
   <section id="case-studies">
     <span class="eyebrow">Case Studies</span>
@@ -259,24 +282,7 @@ footer{border-top:1px solid var(--line);margin-top:8vh;padding:34px 0 42px}
       <span>Python</span><span>PyTest</span><span>Swift</span><span>XCTest / XCUITest</span><span>Appium</span><span>OpenCV</span><span>CI/CD</span><span>Regression Automation</span>
     </div>
   </section>
-
-  <section id="apps">
-    <span class="eyebrow">Editing Tools &amp; Workflows</span>
-    <h2>Apps I actually use for photo and video edits</h2>
-    <p class="section-lede">I wanted this portfolio to reflect the tools I really use, not just list software names. Most of my edits are done across iPhone apps and desktop creative tools depending on the type of photo or video.</p>
-
-    <dl class="apps">
-      <div><dt>iPhone Photos</dt><dd>I use Photos for quick crop and rotate work, exposure and brightness adjustments, contrast, highlights, shadows, color tuning and filters such as Vivid.</dd></div>
-      <div><dt>Instagram</dt><dd>I use Instagram for short-form video edits, clip selection and sequencing, timing, music placement, effects and preparing the final social-media version.</dd></div>
-      <div><dt>Pixelmator Pro</dt><dd>I use Pixelmator Pro for portrait enhancement, color adjustments, contrast and highlight work, cleanup, compositing and layered edits such as the creative portrait collage in this portfolio.</dd></div>
-      <div><dt>Final Cut Pro</dt><dd>I use Final Cut Pro for more structured video editing such as cutting clips, arranging sequences, color correction and audio cleanup.</dd></div>
-      <div><dt>iMovie</dt><dd>I use iMovie for quick video assembly, trimming, transitions, titles and simple short-video workflows.</dd></div>
-      <div><dt>Adobe Photoshop</dt><dd>I use Photoshop for photo retouching, masking, compositing and more detailed image adjustments when needed.</dd></div>
-      <div><dt>HP Smart</dt><dd>This is where my editing experience connects directly with my SDET work. I tested image-editing and scan-quality features including crop behavior, document edge detection, shadow removal and export quality.</dd></div>
-    </dl>
-  </section>
-
-  <section id="testing">
+<section id="testing">
     <span class="eyebrow">SDET Approach</span><h2>How I test Creativity Apps</h2>
     <p style="max-width:56ch;color:var(--mute);margin:0 0 28px">I evaluate creative tools end to end—combining functional and regression coverage, visual fidelity, editing workflows, export validation, stability, targeted performance checks and repeatable automation.</p>
     <dl class="apps"><div><dt>Color and file formats</dt><dd>Check that colors stay consistent across color profiles like sRGB and Display P3, and that files open and export correctly in formats such as JPEG, PNG, HEIC and PSD.</dd></div><div><dt>Layers and undo</dt><dd>Stack many layers, masks and adjustments, then undo and redo in different orders to confirm nothing is lost or reordered.</dd></div><div><dt>Timeline and playback</dt><dd>Build long timelines with mixed frame rates and resolutions, and check smooth playback, accurate trims and audio-video sync.</dd></div><div><dt>Export quality</dt><dd>Compare exported video against the timeline for quality, length, sync and file size across presets.</dd></div><div><dt>Performance and stability</dt><dd>Time key actions on large projects and watch for slowdowns, memory growth and crashes during long sessions.</dd></div><div><dt>Automated checks</dt><dd>Automate stable, repeatable workflows and output checks in CI so functional and media regressions surface early, while reserving subjective visual decisions for human review.</dd></div></dl>
@@ -314,21 +320,21 @@ footer{border-top:1px solid var(--line);margin-top:8vh;padding:34px 0 42px}
 /* EDIT THIS LIST: type "photo" or "video"; title; place = what you edited.
    photos: src = your edited image, before = the original (both embedded data: URIs). videos: link = your YouTube/Vimeo/Drive page. */
 var WORK=[
- {type:"photo",title:"Wildflower couple portrait",place:"Outdoor portrait enhancement · color and light adjustments",note:"Editing contribution: enhanced this outdoor couple portrait with color and light adjustments, improved contrast and clarity, and refined overall tones to bring out the landscape, sky, and flowers.",h:[142,48],alt:"Outdoor couple portrait in a wildflower field with enhanced color and light adjustments",src:"image_bbfa48843a53.png"},
- {type:"photo",title:"Outdoor portrait",place:"Portrait enhancement · color and light adjustments",note:"Editing contribution: enhanced this outdoor portrait with light and color adjustments, tonal balancing, and overall cleanup for a polished lifestyle look.",h:[198,62],alt:"Outdoor portrait photo edit with polished color and light adjustments",src:"image_b28cedde4331.png"},
- {type:"video",title:"Instagram video edit 1",place:"Short-form video edit · Instagram",note:"Editing contribution: created and refined this short-form video using Instagram editing tools, including clip selection and sequencing, timing, transitions/effects where used, music/audio placement, and final social-media export.",shape:"wide",h:[230,85],alt:"Instagram short-form video edit 1",src:"image_46ae2e3107c8.jpg",vid:"vid-instagram-1"},
- {type:"photo",title:"Creative portrait collage",place:"Creative portrait collage · Pixelmator Pro",note:"Editing contribution: created a layered portrait collage using repeated crops of the same image, varied scale and positioning, overlapping composition, and color adjustments to create a stylized editorial effect.",h:[315,35],alt:"Creative portrait collage with repeated layered crops of a woman, edited in Pixelmator Pro",src:"image_48cf1fc13fc2.jpg"},
- {type:"photo",title:"Las Vegas",place:"Photo edit · Apple Photos",note:"Photo editing completed by me in Apple Photos.",h:[200,30],alt:"Two people taking a selfie in sunglasses on the Las Vegas Strip, with the New York-New York hotel and roller coaster behind them",src:"image_81c147cf310b.jpg"},
- {type:"photo",title:"Portrait",place:"Photo color grading · Pixelmator Pro",note:"Photo color grading completed by me in Pixelmator Pro.",h:[20,40],src:"image_ea392629c5df.jpg",before:"image_76dcfdc4a445.jpg"},
- {type:"photo",title:"Maternity portrait",place:"Photo color adjustments · Pixelmator Pro",note:"Photo color adjustments completed by me in Pixelmator Pro.",h:[35,50],src:"image_3f52fa8c5141.jpg",before:"image_17627a8fc17c.jpg"},
- {type:"video",title:"Monica",place:"Video editing · iMovie",note:"Video editing and final assembly completed by me in iMovie.",h:[260,40],src:"image_09313df217ae.jpg",vid:"vid-monica"},
- {type:"video",title:"Zara",place:"Video editing · Final Cut Pro",note:"Video editing and final assembly completed by me in Final Cut Pro.",h:[300,40],src:"image_ede41bbeb37a.jpg",vid:"vid-zara"},
- {type:"video",title:"Korean Strawberry Milk",place:"Short-form video edit · Instagram",note:"Short-form social video editing completed by me using Instagram editing tools.",h:[330,40],src:"image_ff7b248eedb4.jpg",vid:"vid-strawberry",link:"https://www.instagram.com/p/DWSg9PVjGtm/"},
- {type:"photo",title:"Maternity portrait II",place:"Photo color adjustments · Pixelmator Pro",note:"Photo color adjustments completed by me in Pixelmator Pro.",h:[340,35],src:"image_810ae77d71e3.jpg",before:"image_614fac2c9208.jpg"},
- {type:"photo",title:"La Jolla portrait",place:"Black-and-white photo edit",note:"Black-and-white photo conversion and editing completed by me.",h:[0,0],alt:"Black and white portrait of a man in sunglasses and a denim jacket at La Jolla, with the ocean and coastline behind him",src:"image_a1354ac8e360.jpg"},
- {type:"photo",title:"Vegas garden",place:"Contrast + highlights · Pixelmator Pro",note:"Photo contrast and highlight adjustments completed by me in Pixelmator Pro.",h:[210,35],src:"image_4ba89d9e9189.jpg",before:"image_40e4a2ed2ef6.jpg"},
- {type:"photo",title:"Document scan",place:"Scan correction · HP Smart",note:"HP Smart image-quality workflow: document edge detection and shadow-removal validation.",h:[230,40],src:"image_734a982ab8b9.jpg",before:"image_160cf57bbafe.jpg"},
- {type:"photo",title:"Gender reveal",place:"Color styling · Vivid filter · Photos",note:"Photo color styling completed using the Vivid filter in Apple Photos.",h:[160,30],shape:"wide",src:"image_1540f49f98cf.jpg",before:"image_48b81cddfc0d.jpg"},
+ {type:"photo",title:"Wildflower couple portrait",personal:"Personally edited: Color + contrast + clarity",place:"Outdoor portrait enhancement · color and light adjustments",note:"Editing contribution: enhanced this outdoor couple portrait with color and light adjustments, improved contrast and clarity, and refined overall tones to bring out the landscape, sky, and flowers.",h:[142,48],alt:"Outdoor couple portrait in a wildflower field with enhanced color and light adjustments",src:"image_bbfa48843a53.png"},
+ {type:"photo",title:"Outdoor portrait",personal:"Personally edited: Light + color + tonal balance",place:"Portrait enhancement · color and light adjustments",note:"Editing contribution: enhanced this outdoor portrait with light and color adjustments, tonal balancing, and overall cleanup for a polished lifestyle look.",h:[198,62],alt:"Outdoor portrait photo edit with polished color and light adjustments",src:"image_b28cedde4331.png"},
+ {type:"video",title:"Instagram video edit 1",personal:"Personally edited: Short-form video",place:"Short-form video edit · Instagram",note:"Editing contribution: created and refined this short-form video using Instagram editing tools, including clip selection and sequencing, timing, transitions/effects where used, music/audio placement, and final social-media export.",shape:"wide",h:[230,85],alt:"Instagram short-form video edit 1",src:"image_46ae2e3107c8.jpg",vid:"vid-instagram-1"},
+ {type:"photo",title:"Creative portrait collage",personal:"Personally edited: Layered collage + color",place:"Creative portrait collage · Pixelmator Pro",note:"Editing contribution: created a layered portrait collage using repeated crops of the same image, varied scale and positioning, overlapping composition, and color adjustments to create a stylized editorial effect.",h:[315,35],alt:"Creative portrait collage with repeated layered crops of a woman, edited in Pixelmator Pro",src:"image_48cf1fc13fc2.jpg"},
+ {type:"photo",title:"Las Vegas",personal:"Personally edited: Crop + light/color in Photos",place:"Photo edit · Apple Photos",note:"Photo editing completed by me in Apple Photos.",h:[200,30],alt:"Two people taking a selfie in sunglasses on the Las Vegas Strip, with the New York-New York hotel and roller coaster behind them",src:"image_81c147cf310b.jpg"},
+ {type:"photo",title:"Portrait",personal:"Personally edited: Color grading",place:"Photo color grading · Pixelmator Pro",note:"Photo color grading completed by me in Pixelmator Pro.",h:[20,40],src:"image_ea392629c5df.jpg",before:"image_76dcfdc4a445.jpg"},
+ {type:"photo",title:"Maternity portrait",personal:"Personally edited: Color adjustments",place:"Photo color adjustments · Pixelmator Pro",note:"Photo color adjustments completed by me in Pixelmator Pro.",h:[35,50],src:"image_3f52fa8c5141.jpg",before:"image_17627a8fc17c.jpg"},
+ {type:"video",title:"Monica",personal:"Personally edited: Video assembly + trims",place:"Video editing · iMovie",note:"Video editing and final assembly completed by me in iMovie.",h:[260,40],src:"image_09313df217ae.jpg",vid:"vid-monica"},
+ {type:"video",title:"Zara",personal:"Personally edited: Video assembly + color",place:"Video editing · Final Cut Pro",note:"Video editing and final assembly completed by me in Final Cut Pro.",h:[300,40],src:"image_ede41bbeb37a.jpg",vid:"vid-zara"},
+ {type:"video",title:"Korean Strawberry Milk",personal:"Personally edited: Short-form Instagram video",place:"Short-form video edit · Instagram",note:"Short-form social video editing completed by me using Instagram editing tools.",h:[330,40],src:"image_ff7b248eedb4.jpg",vid:"vid-strawberry",link:"https://www.instagram.com/p/DWSg9PVjGtm/"},
+ {type:"photo",title:"Maternity portrait II",personal:"Personally edited: Color adjustments",place:"Photo color adjustments · Pixelmator Pro",note:"Photo color adjustments completed by me in Pixelmator Pro.",h:[340,35],src:"image_810ae77d71e3.jpg",before:"image_614fac2c9208.jpg"},
+ {type:"photo",title:"La Jolla portrait",personal:"Personally edited: Black-and-white conversion",place:"Black-and-white photo edit",note:"Black-and-white photo conversion and editing completed by me.",h:[0,0],alt:"Black and white portrait of a man in sunglasses and a denim jacket at La Jolla, with the ocean and coastline behind him",src:"image_a1354ac8e360.jpg"},
+ {type:"photo",title:"Vegas garden",personal:"Personally edited: Contrast + highlights",place:"Contrast + highlights · Pixelmator Pro",note:"Photo contrast and highlight adjustments completed by me in Pixelmator Pro.",h:[210,35],src:"image_4ba89d9e9189.jpg",before:"image_40e4a2ed2ef6.jpg"},
+ {type:"photo",title:"Document scan",personal:"Personally tested: Edge detection + shadow removal",place:"Scan correction · HP Smart",note:"HP Smart image-quality workflow: document edge detection and shadow-removal validation.",h:[230,40],src:"image_734a982ab8b9.jpg",before:"image_160cf57bbafe.jpg"},
+ {type:"photo",title:"Gender reveal",personal:"Personally edited: Vivid filter + color styling",place:"Color styling · Vivid filter · Photos",note:"Photo color styling completed using the Vivid filter in Apple Photos.",h:[160,30],shape:"wide",src:"image_1540f49f98cf.jpg",before:"image_48b81cddfc0d.jpg"},
  
 ];
 function art(h){return "linear-gradient(140deg,hsl("+h[0]+","+h[1]+"%,32%),hsl("+(h[0]+40)+","+h[1]+"%,62%))"}
@@ -341,7 +347,7 @@ function render(f){
     b.className="tile"+(w.shape==="wide"?" wide":"");
     b.setAttribute("aria-label","Open "+w.title);
     var bg=w.src?"url("+w.src+")":art(w.h);
-    b.innerHTML='<div class="art" style="background-image:'+bg+'"></div>'+(w.type==="video"?'<span class="play"></span>':"")+'<div class="cap"><span>'+w.title+'</span><span>'+w.place+'</span></div>';
+    b.innerHTML='<div class="art" style="background-image:'+bg+'"></div>'+(w.type==="video"?'<span class="play"></span>':"")+'<div class="cap"><span class="cap-main"><span>'+w.title+'</span><span class="personal">'+(w.personal||"")+'</span></span><span class="tool">'+w.place+'</span></div>';
     b.onclick=function(){open(w)};
     grid.appendChild(b);
   });
